@@ -11,7 +11,7 @@ const Select = ({label,items,value,setValue,required}) => {
             <select required={required} value={value} onChange={handleChange}>
                 {items.length === 0 && <option>No items</option> }
                 {items.length !== 0 && <option>Select a option</option> }
-                {items.map((item,idx) => <option key={item}>{item}</option>)}
+                {items.map((item,idx) => <option key={item.name}>{item.name}</option>)}
             </select>
         </div>
     );
