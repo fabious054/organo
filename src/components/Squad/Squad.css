@@ -1,6 +1,7 @@
 .squad{
     text-align: center;
     padding: 32px;
+    position: relative;
 }
 
 .squad h3{
@@ -14,4 +15,15 @@
     justify-content: space-around;
     margin-top: 32px;
     flex-wrap: wrap;
+}
+.squad .color-input{
+    position: absolute;
+    top: 28px;
+    right: 58px;
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    outline: none;
 }
