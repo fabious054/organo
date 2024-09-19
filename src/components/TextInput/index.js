@@ -1,10 +1,21 @@
 import './TextInput.css';
 
-const TextInput = ({label,placeholder}) => {
+const TextInput = ({label,placeholder,required,value,setValue}) => {
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
+
   return (
     <div className='text-input'>
         <label htmlFor="name">{label}</label>
-        <input type="text" name="name" placeholder={placeholder} />
+        <input 
+          value={value}
+          onChange={handleChange}
+          required={required}
+          type="text"
+          name="name"
+          placeholder={placeholder} />
     </div>
   );
 };
