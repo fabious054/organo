@@ -5,8 +5,7 @@ import TextInput from '../TextInput';
 import './Form.css';
 
 
-const Form = () => {
-    const squads = ['Programmimg', 'Front-End', 'Data Science', 'Devops', 'UI/UX', 'Mobile', 'Innovation'];
+const Form = ({setMember,squads}) => {
 
     const [name, setName] = useState('');
     const [position, setPosition] = useState('');
@@ -15,7 +14,8 @@ const Form = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(`NEW TEAM MEMBER: ${name} - ${position} - ${image} - ${squad}`);
+        const member = {name, position, image, squad};
+        setMember((prev) => [...prev, member]);
     };
     
     return (
