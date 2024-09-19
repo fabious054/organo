@@ -14,6 +14,7 @@ const Squad = ({name, members,principalColor,secondaryColor}) => {
                             position={member.position}
                             image={member.image}
                             squad={member.squad}
+                            backgroundColor={principalColor}
                         />
                     ))}
                 </div>

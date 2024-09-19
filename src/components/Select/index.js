@@ -9,8 +9,8 @@ const Select = ({label,items,value,setValue,required}) => {
         <div className="select">
             <label>{label}</label>
             <select required={required} value={value} onChange={handleChange}>
+                <option value="">Select a option</option>
                 {items.length === 0 && <option>No items</option> }
-                {items.length !== 0 && <option>Select a option</option> }
                 {items.map((item,idx) => <option key={item.name}>{item.name}</option>)}
             </select>
         </div>

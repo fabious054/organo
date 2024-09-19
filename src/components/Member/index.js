@@ -1,9 +1,9 @@
 import './Member.css';
 
-const Member = ({name,position,image,squad}) => {
+const Member = ({name,position,image,backgroundColor}) => {
     return (
         <div className='member'>
-            <div className='header'>
+            <div className='header'style={{backgroundColor:backgroundColor}}>
                 <img src={image}alt={name}/>
             </div>
             <div className='footer'>
