@@ -1,6 +1,4 @@
-import logo from './logo.svg';
 import Banner from './components/Banner/Banner';
-import './App.css';
 
 function App() {
   return (
