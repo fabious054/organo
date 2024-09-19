@@ -16,6 +16,11 @@ const Form = ({setMember,squads}) => {
         e.preventDefault();
         const member = {name, position, image, squad};
         setMember((prev) => [...prev, member]);
+
+        setName('');
+        setPosition('');
+        setImage('');
+        setSquad('');
     };
     
     return (

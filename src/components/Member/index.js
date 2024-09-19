@@ -1,14 +1,14 @@
 import './Member.css';
 
-const Member = () => {
+const Member = ({name,position,image,squad}) => {
     return (
         <div className='member'>
             <div className='header'>
-                <img src='https://github.com/fabious054.png'alt='Fabio Abreu'/>
+                <img src={image}alt={name}/>
             </div>
             <div className='footer'>
-                <h4>Fabio Abreu</h4>
-                <h5>DEV</h5>
+                <h4>{name}</h4>
+                <h5>{position}</h5>
             </div>
         </div>
     );

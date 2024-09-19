@@ -15,6 +15,7 @@ function App() {
       {name:'Innovation',principalColor:'#FF8A29',secondaryColor:'#FFEEDF'}
     ];
   const [teamMembers, setTeamMembers] = useState([]);
+// MEMBER = {name, position, image, squad}
 
   return (
     <div className="App">
@@ -24,7 +25,7 @@ function App() {
        <Squad
         key={index}
         name={squad.name}
-        members={teamMembers}
+        members={teamMembers.filter(member => member.squad === squad.name)}
         principalColor={squad.principalColor}
         secondaryColor={squad.secondaryColor} />
      ))}
