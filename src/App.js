@@ -14,7 +14,7 @@ function App() {
       {name:'Mobile',principalColor:'#FFBA05',secondaryColor:'#FFF5D9'},
       {name:'Innovation',principalColor:'#FF8A29',secondaryColor:'#FFEEDF'}
     ];
-  const [teamMembers, setTeamMembers] = useState([]);
+  const [teamMembers, setTeamMembers] = useState([{name:'Fabio Abreu',position:'Developer',image:'https://github.com/fabious054.png',squad:'Programming'}]);
 // MEMBER = {name, position, image, squad}
 
   return (
