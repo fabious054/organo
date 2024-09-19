@@ -16,13 +16,17 @@ function App() {
     ];
   const [teamMembers, setTeamMembers] = useState([{name:'Fabio Abreu',position:'Developer',image:'https://github.com/fabious054.png',squad:'Programming'}]);
 // MEMBER = {name, position, image, squad}
-
+  const deleteMember = () =>{
+    alert('Deletado');
+  }
+  
   return (
     <div className="App">
       <Banner />
       <Form setMember={setTeamMembers} squads={squads} />
      {squads.map((squad, index) => (
        <Squad
+        deleteMember={deleteMember}
         key={index}
         name={squad.name}
         members={teamMembers.filter(member => member.squad === squad.name)}

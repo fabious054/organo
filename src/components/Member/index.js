@@ -1,10 +1,12 @@
+import { IoMdCloseCircle } from "react-icons/io";
 import './Member.css';
 
-const Member = ({name,position,image,backgroundColor}) => {
+const Member = ({name,position,image,backgroundColor,deleteMember}) => {
     return (
         <div className='member'>
+            <IoMdCloseCircle className='delete'onClick={() => deleteMember() }/>
             <div className='header'style={{backgroundColor:backgroundColor}}>
-                <img src={image}alt={name}/>
+                <img src={image}alt={name} />
             </div>
             <div className='footer'>
                 <h4>{name}</h4>
