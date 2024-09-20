@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Button from '../Button';
 import Select from '../Select';
-import TextInput from '../TextInput';
+import Input from '../Input';
 import { v4 as uuidv4 } from 'uuid';
 import './Form.css';
 
@@ -30,8 +30,8 @@ const Form = ({setMember,squads,setNewSquad}) => {
     const handleSubmitTeam = (e) => {
         e.preventDefault();
         let id = uuidv4();
-        let principalColor = `#${color}`;
-        let secondaryColor = `#${color}`;
+        let principalColor = color;
+        let secondaryColor = color;
         let name = squadName;
         
         const squad = {id, name, principalColor, secondaryColor};
@@ -46,19 +46,19 @@ const Form = ({setMember,squads,setNewSquad}) => {
         <section className='form'>
             <form onSubmit={handleSubmit}>
                 <h2>Add a new team member</h2>
-                <TextInput
+                <Input
                     value={name}
                     setValue={setName}
                     required={true}
                     label="Name"
                     placeholder="Your name" />
-                <TextInput
+                <Input
                     value={position}
                     setValue={setPosition}
                     required={true}
                     label="Position"
                     placeholder="Your position" />
-                <TextInput
+                <Input
                     value={image}
                     setValue={setImage}
                     required={true}
@@ -76,13 +76,14 @@ const Form = ({setMember,squads,setNewSquad}) => {
             </form>
             <form onSubmit={handleSubmitTeam}>
                 <h2>Add a new squad</h2>
-                <TextInput
+                <Input
                     value={squadName}
                     setValue={setSquadName}
                     required
                     label="Name"
                     placeholder="Squad name" />
-                <TextInput
+                <Input
+                    type={'color'}
                     value={color}
                     setValue={setColor}
                     required

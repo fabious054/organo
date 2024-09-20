@@ -1,10 +1,12 @@
 import './TextInput.css';
 
-const TextInput = ({label,placeholder,required,value,setValue}) => {
+const Input = ({label,placeholder,required,value,setValue,type}) => {
 
   const handleChange = (e) => {
     setValue(e.target.value);
   };
+
+  type = type || 'text';
 
   return (
     <div className='text-input'>
@@ -13,11 +15,11 @@ const TextInput = ({label,placeholder,required,value,setValue}) => {
           value={value}
           onChange={handleChange}
           required={required}
-          type="text"
+          type={type}
           name="name"
           placeholder={placeholder} />
     </div>
   );
 };
 
-export default TextInput;
+export default Input;
