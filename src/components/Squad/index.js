@@ -14,7 +14,8 @@ const Squad = ({name, members,principalColor,secondaryColor,deleteMember}) => {
                 <div className='members'>
                     {members.map((member, index) => (
                         <Member
-                            key={index}
+                            id = {member.id}
+                            key={member.name}
                             name={member.name}
                             position={member.position}
                             image={member.image}
