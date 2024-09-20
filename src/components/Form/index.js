@@ -2,15 +2,19 @@ import { useState } from 'react';
 import Button from '../Button';
 import Select from '../Select';
 import TextInput from '../TextInput';
+import { v4 as uuidv4 } from 'uuid';
 import './Form.css';
 
 
-const Form = ({setMember,squads}) => {
+const Form = ({setMember,squads,setNewSquad}) => {
 
     const [name, setName] = useState('');
     const [position, setPosition] = useState('');
     const [image, setImage] = useState('');
     const [squad, setSquad] = useState('');
+
+    const [squadName, setSquadName] = useState('');
+    const [color, setColor] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -21,6 +25,21 @@ const Form = ({setMember,squads}) => {
         setPosition('');
         setImage('');
         setSquad('');
+    };
+    
+    const handleSubmitTeam = (e) => {
+        e.preventDefault();
+        let id = uuidv4();
+        let principalColor = `#${color}`;
+        let secondaryColor = `#${color}`;
+        let name = squadName;
+        
+        const squad = {id, name, principalColor, secondaryColor};
+        setNewSquad((prev) => [...prev, squad]);
+
+        setSquadName('');
+        setColor('');
+
     };
     
     return (
@@ -53,6 +72,24 @@ const Form = ({setMember,squads}) => {
                     items={squads}/>
                 <Button>
                     Add Card
+                </Button>
+            </form>
+            <form onSubmit={handleSubmitTeam}>
+                <h2>Add a new squad</h2>
+                <TextInput
+                    value={squadName}
+                    setValue={setSquadName}
+                    required
+                    label="Name"
+                    placeholder="Squad name" />
+                <TextInput
+                    value={color}
+                    setValue={setColor}
+                    required
+                    label="Color"
+                    placeholder="Squad color" />
+                <Button>
+                    Add Squad
                 </Button>
             </form>
         </section>
